@@ -1,4 +1,4 @@
 # VHDL_ADDERS
 This repository contains different VHDL Adders and their corresponding test benches. 
-Implemented Adders: 
+\nImplemented Adders: 
 --> Kogge Stone Adders (64 bit)
