@@ -7,6 +7,8 @@ Implemented Adders:
 
 --> Kogge Stone Adder  (64 bit)
 
+--> Han Carlson Adder (64 bit)
+
 --> Ripple Carry Adder (64 bit)
 
 --> Carry Look Ahead Adder (64 bit)
