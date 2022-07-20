@@ -12,3 +12,5 @@ Implemented Adders:
 --> Ripple Carry Adder (64 bit)
 
 --> Carry Look Ahead Adder (64 bit)
+
+--> Carry Select Adder (64 bit)
