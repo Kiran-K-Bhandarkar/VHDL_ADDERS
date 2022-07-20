@@ -11,7 +11,7 @@ PORT
 (
   A, B, C : IN STD_LOGIC_VECTOR(INPUT_WIDTH-1 DOWNTO 0);
   CO      : OUT STD_LOGIC;
-  S       : OUT STD_LOGIC_VECTOR(INPUT_WIDTH DOWNTO 0)
+  S       : OUT STD_LOGIC_VECTOR(INPUT_WIDTH-1 DOWNTO 0)
 );
 END ENTITY CSA_ADDER;
 
@@ -66,19 +66,10 @@ BEGIN
         CO  => C1_TEMP(I)
       );
     END GENERATE RIPPLE_CARRY_PROCESS;    
-
-  FA_RC_END: FULL_ADDER PORT MAP
-      (
-	A   => C0_TEMP(INPUT_WIDTH-1),
-        B   => C1_TEMP(INPUT_WIDTH-1),
-        CI  => '0',
-        S   => SO_TEMP,
-        CO  => CO_TEMP
-      );	  
   
   -- OUTPUT
-  S  <= SO_TEMP & S1_TEMP;
-  CO <= CO_TEMP;
+  S  <= S1_TEMP;
+  CO <= C1_TEMP(INPUT_WIDTH-1);
 END BEHAVIORAL;
 
   
