@@ -16,3 +16,5 @@ Implemented Adders:
 --> Carry Look Ahead Adder (64 bit)
 
 --> Carry Select Adder (64 bit)
+
+--> Modulo Adders (64 bit)
