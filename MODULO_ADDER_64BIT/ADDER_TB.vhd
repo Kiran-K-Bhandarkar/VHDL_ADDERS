@@ -25,10 +25,6 @@ BEGIN
      A <= std_logic_vector(to_signed(11, A'length));
      B <= std_logic_vector(to_signed(8, B'length));
      P <= std_logic_vector(to_signed(11, P'length));
-     WAIT FOR 20 NS;
-     A <= std_logic_vector(to_signed(13, A'length));
-     B <= std_logic_vector(to_signed(13, B'length));
-     P <= std_logic_vector(to_signed(11, P'length));
      WAIT;
    END PROCESS TEST_PROCESS;
 
