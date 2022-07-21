@@ -6,42 +6,42 @@ ENTITY ADDER_TB IS
 END ENTITY ADDER_TB;
 
 ARCHITECTURE BEHAVIORAL OF ADDER_TB IS
-SIGNAL A, B, C: STD_LOGIC_VECTOR(63 DOWNTO 0);
+SIGNAL X,Y,Z: STD_LOGIC_VECTOR(63 DOWNTO 0);
 SIGNAL S: STD_LOGIC_VECTOR(63 DOWNTO 0);
 SIGNAL CO : STD_LOGIC;
 
 BEGIN
-  UUT: ENTITY WORK.CSA_ADDER
+  UUT: ENTITY WORK.CS_ADDER
     PORT MAP
       (
-	A => A,
-	B => B,
-	C => C,
+	X => X,
+	Y => Y,
+	Z => Z,
 	S => S,
         CO => CO
       );
 
   TEST_PROCESS: PROCESS
     BEGIN
-      A <= std_logic_vector(to_signed(-5, A'length));
-      B <= std_logic_vector(to_signed(-7, B'length));
-      C <= std_logic_vector(to_signed(5, A'length));
+      X <= std_logic_vector(to_signed(-5, X'length));
+      Y <= std_logic_vector(to_signed(-7, Y'length));
+      Z <= std_logic_vector(to_signed(5, Z'length));
       WAIT FOR 20 NS;
-      A <= std_logic_vector(to_signed(-255, A'length));
-      B <= std_logic_vector(to_signed(-259, B'length));
-      C <= std_logic_vector(to_signed(-255, A'length));
+      X <= std_logic_vector(to_signed(-255, X'length));
+      Y <= std_logic_vector(to_signed(-259, Y'length));
+      Z <= std_logic_vector(to_signed(-255, Z'length));
       WAIT FOR 20 NS;
-      A <= std_logic_vector(to_signed(65535, A'length));
-      B <= std_logic_vector(to_signed(65353, B'length));
-      C <= std_logic_vector(to_signed(65353, B'length));
+      X <= std_logic_vector(to_signed(65535, X'length));
+      Y <= std_logic_vector(to_signed(65353, Y'length));
+      Z <= std_logic_vector(to_signed(65353, Z'length));
       WAIT FOR 20 NS;
-      A <= std_logic_vector(to_signed(2147483647, A'length));
-      B <= std_logic_vector(to_signed(2147483647, B'length));
-      C <= std_logic_vector(to_signed(2147483647, A'length));
+      X <= std_logic_vector(to_signed(2147483647, X'length));
+      Y <= std_logic_vector(to_signed(2147483647, Y'length));
+      Z <= std_logic_vector(to_signed(2147483647, Z'length));
       WAIT FOR 20 NS;
-      A <= "0000000000000000000000000000001000000000000000000000000000000000";
-      B <= std_logic_vector(to_signed(2147483647, B'length));
-      C <= std_logic_vector(to_signed(2147483647, B'length));
+      X <= "0000000000000000000000000000001000000000000000000000000000000000";
+      Y <= std_logic_vector(to_signed(2147483647, Y'length));
+      Z <= std_logic_vector(to_signed(2147483647, Z'length));
       WAIT;
   END PROCESS;
 END BEHAVIORAL;
