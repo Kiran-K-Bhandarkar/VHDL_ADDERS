@@ -11,6 +11,8 @@ Implemented Adders:
 
 --> Carry Save Adder (64 bit)
 
+--> Modulo Adders (64 bit)
+
 --> Ripple Carry Adder (64 bit)
 
 --> Carry Look Ahead Adder (64 bit)
