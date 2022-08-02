@@ -7,6 +7,8 @@ Implemented Adders:
 
 --> Kogge Stone Adder  (64 bit)
 
+--> Compressor Adders (64 bit)
+
 --> Han Carlson Adder (64 bit)
 
 --> Carry Save Adder (64 bit)

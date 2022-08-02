@@ -1,0 +1,38 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY COMPRESSOR IS PORT
+(
+  V, W, X, Y, Cin: IN STD_LOGIC;
+  Cout, C, S     : OUT STD_LOGIC
+);
+END ENTITY COMPRESSOR;
+
+ARCHITECTURE BEHAVIORAL OF COMPRESSOR IS
+SIGNAL Cout_TEMP, C_TEMP, S_TEMP: STD_LOGIC;
+
+BEGIN
+
+  COUT_PROCESS: PROCESS(ALL)
+    BEGIN
+	  IF (X XOR W) = '0' THEN 
+	    Cout_TEMP <= W;
+	  ELSE                    
+	    Cout_TEMP <= Y;
+      END IF;
+	END PROCESS;
+
+  C_PROCESS: PROCESS(ALL)
+    BEGIN
+	  IF (X XOR W XOR V XOR Y) = '0' THEN 
+	    C_TEMP <= V;
+	  ELSE                    
+	    C_TEMP <= Cin;
+      END IF;
+	END PROCESS;
+
+
+  S    <= V XOR W XOR X XOR Y XOR Cin;
+  Cout <= Cout_TEMP;
+  C    <= C_TEMP;
+END BEHAVIORAL;
